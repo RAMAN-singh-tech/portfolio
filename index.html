@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f0f0f0;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background: #121212;
+      color: #fff;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1rem;
+    }
+
+    .hero {
+      height: 100vh;
+      /* background: url(WebD2.jpg)center/cover no-repeat; */
+      background: linear-gradient(to right, #31285c, #2d2d89);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p span {
+      color: #00ffee;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .about img {
+      width: 150px;
+      border-radius: 50%;
+      display: block;
+      margin: 1rem auto;
+    }
+
+    .skills .bar {
+      background: #ddd;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+    }
+
+    .skills .bar div {
+      background: #0d3e6f;
+      height: 20px;
+      color: white;
+      padding-left: 5px;
+      border-radius: 5px;
+    }
+
+    .projects img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .contact form input,
+    .contact form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 0.5rem 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .contact button {
+      padding: 10px 20px;
+      background: #111;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .resume-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #00aaff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .testimonials {
+      background: #eee;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    .testimonial {
+      margin-bottom: 1rem;
+    }
+
+    .testimonial p {
+      font-style: italic;
+    }
+
+    .dark-toggle {
+      cursor: pointer;
+      font-size: 1.2rem;
+      background: transparent;
+      color: white;
+      border: none;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    footer a {
+      color: white;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      color: #00acee;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Portfolio</h1>
+    <div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+  </header>
+
+  <section class="hero">
+    <h2>Hello, I'm <span>RAMAN</span></h2>
+    <p>I am a <span id="typewriter">Web Developer</span></p>
+    <a href="resume.pdf" class="resume-btn" download>Download Resume</a>
+  </section>
+
+  <section class="section about" id="about">
+    <h2>About Me</h2>
+    <img src="images/your-photo.jpg" alt="Your Photo">
+    <p>I’m a passionate web developer with strong interest in building efficient, creative, and user-friendly websites and apps. I have experience in full stack development, especially Java, Spring Boot, HTML, CSS, and JavaScript.</p>
+  </section>
+
+  <section class="section skills" id="skills">
+    <h2>Skills</h2>
+    <div class="bar"><div style="width:90%">HTML</div></div>
+    <div class="bar"><div style="width:85%">CSS</div></div>
+    <div class="bar"><div style="width:80%">JavaScript</div></div>
+    <div class="bar"><div style="width:75%">Java + Spring Boot</div></div>
+    <div class="bar"><div style="width:70%">MySQL</div></div>
+  </section>
+
+  <section class="section projects" id="projects">
+    <h2>Projects</h2>
+    <img src="images/project1.jpg" alt="Project 1">
+    <p><strong>Amazon Clone:</strong> Front-end web clone using HTML, CSS, JavaScript.</p>
+    <img src="images/project2.jpg" alt="Project 2">
+    <p><strong>Employee System:</strong> Full stack CRUD app using Java, JSP, JDBC, MySQL.</p>
+  </section>
+
+  <section class="section testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonial">
+      <p>“Very talented and quick learner! Built my business website in just 5 days.”</p>
+      <strong>– Client A</strong>
+    </div>
+    <div class="testimonial">
+      <p>“Highly skilled in Java and backend logic. Great experience working with him.”</p>
+      <strong>– Client B</strong>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Your Name. All rights reserved.</p>
+    <div>
+      <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/share/19BrLCf4AG/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://x.com/OoGuruYT1?t=59bVTOuZzIudVidNi8yfrA&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    // Dark mode toggle
+    function toggleDark() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    // Typewriter effect
+    const roles = ["Web Developer....", "Java Full Stack..", "UI Designer.."];
+    let i = 0;
+    let j = 0;
+    let current = "";
+    let isDeleting = false;
+
+    function typeEffect() {
+      if (i < roles.length) {
+        if (!isDeleting && j <= roles[i].length) {
+          current = roles[i].substring(0, j++);
+        } else if (isDeleting && j >= 0) {
+          current = roles[i].substring(0, j--);
+        }
+
+        document.getElementById("typewriter").innerText = current;
+
+        if (!isDeleting && j === roles[i].length) {
+          isDeleting = true;
+          setTimeout(typeEffect, 1000);
+        } else if (isDeleting && j === 0) {
+          isDeleting = false;
+          i = (i + 1) % roles.length;
+          setTimeout(typeEffect, 500);
+        } else {
+          setTimeout(typeEffect, isDeleting ? 50 : 100);
+        }
+      }
+    }
+    typeEffect();
+  </script>
+
+</body>
+</html>
